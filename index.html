@@ -14,8 +14,8 @@
         <div class="navbar-inner">
           <a class="brand" href="#">Bloggr</a>
           <ul class="nav">
-            <li><a href="#">Forums</a></li>
-            <li><a>About</a></li>
+            <li>{{#link-to 'forums'}}Forums{{/link-to}}</li>
+            <li>{{#link-to 'about'}}About{{/link-to}}</li>
           </ul>
         </div>
       </div>
@@ -23,8 +23,29 @@
       {{outlet}}
     </script>
 
-    <script type="text/x-handlebars" id="about">
-    <div class="about">About</div>
+  <script type="text/x-handlebars" id="about">      
+  </script>
+
+    <script type="text/x-handlebars" id="forums">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span3">
+            <table class='table'>
+              <thead>
+                <tr><th> Recent Posts </th></tr>
+              </thead>
+              {{#each}}
+              <tr><td>
+                {{title}} <small class='muted'> by {{author.name}}</small>
+              </td></tr>
+              {{/each}}
+            </table>
+          </div>
+          <div class="span9">
+            {{outlet}}
+          </div>
+        </div>
+      </div>  
     </script>
     <script src="js/libs/jquery-1.9.1.js"></script>
     <script src="js/libs/handlebars-1.0.0.js"></script>
