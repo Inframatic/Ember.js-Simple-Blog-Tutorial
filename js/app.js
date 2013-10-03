@@ -2,7 +2,13 @@ App = Ember.Application.create();
 
 App.Router.map(function () {
 	this.resource('about');
-	this.resource('forums');
+	this.resource('posts');
+});
+
+App.PostsRoute = Ember.Route.extend ({
+	model: function() {
+		return posts;
+	}
 });
 
 var posts = [{
