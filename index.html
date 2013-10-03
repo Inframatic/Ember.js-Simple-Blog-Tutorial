@@ -51,6 +51,13 @@
     </script>
 
     <script type="text/x-handlebars" id="post">
+      {{#if isEditing}}
+        {{partial 'post/edit'}}
+        <button {{action 'doneEditing'}}>Done</button>
+      {{else}}
+        <button {{action 'edit'}}>Edit</button>
+      {{/if}}
+
       <h1>{{title}}</h1>
       <h2>by {{author.name}} <small class='muted'>{{date}}</small></h2>
       <hr>
