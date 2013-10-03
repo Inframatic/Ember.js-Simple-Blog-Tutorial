@@ -47,6 +47,20 @@
         </div>
       </div>  
     </script>
+
+    <script type="text/x-handlebars" id="post">
+      <h1>{{title}}</h1>
+      <h2>by {{author.name}} <small class='muted'>({{date}})</small></h2>
+
+      <hr>
+      <div class='intro'>
+        {{excerpt}}
+      </div>
+
+      <div class="below-the-fold">
+        {{body}}
+      </div>  
+    </script>
     <script src="js/libs/jquery-1.9.1.js"></script>
     <script src="js/libs/handlebars-1.0.0.js"></script>
     <script src="js/libs/ember-1.0.0.js"></script>
